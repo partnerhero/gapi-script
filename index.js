@@ -1,4 +1,4 @@
-import gapi from './gapiScript';
+import { gapi, gapiComplete } from './gapiScript';
 
 const loadAuth2 = async (clientId, scopes) => {
     return new Promise(resolve => {
@@ -11,4 +11,4 @@ const loadAuth2 = async (clientId, scopes) => {
     })
 }
 
-export { gapi, loadAuth2 }
+export { gapi, gapiComplete, loadAuth2 }
