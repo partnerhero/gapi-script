@@ -13,8 +13,10 @@
   "keywords": [
     "google",
     "api",
-    "google",
-    "gapi"
+    "gapi-script",
+    "google-auth2",
+    "gapi-auth",
+    "google-sign-in"
 ],
   "author": "Lucas Andrade Oliveira",
   "license": "MIT",
