@@ -1,6 +1,6 @@
 {
   "name": "gapi-script",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "package to load gapi script and some functions",
   "main": "index.js",
   "scripts": {
