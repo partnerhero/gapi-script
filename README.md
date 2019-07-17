@@ -19,13 +19,13 @@ yarn add gapi-script
 
 Then just import `gapi` where you need it:
 ```javascript
-import { gapi } from 'gapi';
+import { gapi } from 'gapi-script';
 ```
 
 If you need to use `gapi auth2` the package already has a function to initialize it:
 
 ```javascript
-import { loadAuth2 } from 'gapi';
+import { loadAuth2 } from 'gapi-script';
 
 let auth2 = await loadAuth2(clientId, scopes);
 ```
