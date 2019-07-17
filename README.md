@@ -1,5 +1,8 @@
 # gapi-script
-npm package that loads gapi script and initialize some functions
+npm package that loads gapi script and initialize some functions.
+
+ - [React live example](https://google-gapi-login.herokuapp.com)
+ - [React live example project](https://github.com/LucasAndrad/gapi-script-live-example)
 
 Since there is no official package and not even an updated package the loads the gapi functions for us, what this package does is: get the js code from: [google api platform](https://apis.google.com/js/platform.js), added it to a file and then export that as module called `gapi`.
 
