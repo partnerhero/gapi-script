@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LucasAndrad/gapi-script.git"
+    "url": "git+https://github.com/partnerhero/gapi-script.git"
   },
   "keywords": [
     "google",
@@ -21,7 +21,7 @@
   "author": "Lucas Andrade Oliveira",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LucasAndrad/gapi-script/issues"
+    "url": "https://github.com/partnerhero/gapi-script/issues"
   },
-  "homepage": "https://github.com/LucasAndrad/gapi-script#readme"
+  "homepage": "https://github.com/partnerhero/gapi-script#readme"
 }
