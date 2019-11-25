@@ -28,9 +28,13 @@ import { gapi } from 'gapi-script';
 If you need to use `gapi auth2` the package already has a function to initialize it:
 
 ```javascript
-import { loadAuth2 } from 'gapi-script';
+import { loadAuth2, loadAuth2WithProps } from 'gapi-script';
 
 let auth2 = await loadAuth2(clientId, scopes);
+
+// or if you need to use more props from gapi you can use this method:
+
+let auth2 = await loadAuth2WithProps({ /* object with props from gapi */ });
 ```
 
 ## Contribution
