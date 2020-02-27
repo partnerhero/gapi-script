@@ -1,6 +1,6 @@
 {
   "name": "gapi-script",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "package to load gapi script and some functions",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
   "keywords": [
     "google",
     "api",
+    "gapi",
     "gapi-script",
     "google-auth2",
     "gapi-auth",
