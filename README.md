@@ -4,7 +4,7 @@ npm package that loads gapi script and initialize some functions.
  - [React live example](https://google-gapi-login.herokuapp.com)
  - [React live example project](https://github.com/LucasAndrad/gapi-script-live-example)
 
-Since there is no official package and not even an updated package the loads the gapi functions for us, what this package does is: get the js code from: [google api platform](https://apis.google.com/js/platform.js), added it to a file and then export that as module called `gapi`.
+Since there is no official package and not even an updated package to load the gapi functions for us, what this package does is: get the js code from: [google api platform](https://apis.google.com/js/platform.js), added it to a file and then export it as a module called `gapi`.
 
 According to google docs, to add gapi into your web project, you have to add a script tag to load everything ([see more here](https://developers.google.com/identity/sign-in/web/sign-in)). But this approach will not work in some cases, sample: with react when you need to use `gapi` at `src/index.js`.
 
