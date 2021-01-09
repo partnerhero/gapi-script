@@ -1,6 +1,6 @@
 import { gapi, gapiComplete } from './gapiScript';
 
-const loadAuth2 = async function (clientId, scopes) {
+const loadAuth2 = async function (gapi, clientId, scopes) {
   return new Promise(resolve => {
     gapi.load('auth2', () => {
       resolve(gapi.auth2.init({
@@ -19,7 +19,6 @@ const loadAuth2WithProps = async function (props) {
   });
 }
 
-
 const loadClientAuth2 = async function (clientId, scopes) {
   return new Promise(resolve => {
       gapi.load('client', () => {
@@ -37,4 +36,30 @@ const loadClientAuth2 = async function (clientId, scopes) {
   });
 }
 
-export { gapi, gapiComplete, loadAuth2, loadAuth2WithProps, loadClientAuth2 };
+/**
+ * A very special function to load the gapi inside the DOM, directly.
+ * So it'll load the real and most recent gapi-scrip from google and attach to DOM:
+ * let gapi = loadGapiInsideDOM();
+ * Now you can use it anywhere.
+ */
+const loadGapiInsideDOM = new Promise(resolve => {
+  const element = document.getElementsByTagName('script')[0];
+  const js = document.createElement('script');
+  js.id = 'google-platform';
+  js.src = '//apis.google.com/js/platform.js';
+  js.async = true;
+  js.defer = true;
+  element.parentNode.insertBefore(js, element);
+  js.onload = async () => {
+    resolve(window.gapi);
+  }
+});
+
+export {
+  gapi,
+  gapiComplete,
+  loadAuth2,
+  loadAuth2WithProps,
+  loadClientAuth2,
+  loadGapiInsideDOM,
+};
