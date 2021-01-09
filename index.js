@@ -1,9 +1,16 @@
 import { gapi, gapiComplete } from './gapiScript';
 
-const loadAuth2 = async function (gapi, clientId, scopes) {
+/**
+ * Function to load gapi auth2 from a gapi that you provied
+ * Check full docs here: https://developers.google.com/identity/sign-in/web/reference#auth_setup
+ * @param {Object} gapiScript gapi script object
+ * @param {string} clientId Your google clientID string
+ * @param {Array.<string[]>} scopes The scopes to request, as a space-delimited string. Optional if fetch_basic_profile is not set to false.
+ */
+const loadAuth2 = async function (gapiScript, clientId, scopes) {
   return new Promise(resolve => {
-    gapi.load('auth2', () => {
-      resolve(gapi.auth2.init({
+    gapiScript.load('auth2', () => {
+      resolve(gapiScript.auth2.init({
         client_id: clientId,
         scope: scopes
       }));
