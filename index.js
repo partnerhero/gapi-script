@@ -5,7 +5,7 @@ import { gapi, gapiComplete } from './gapiScript';
  * Check full docs here: https://developers.google.com/identity/sign-in/web/reference#auth_setup
  * @param {Object} gapiScript gapi script object
  * @param {string} clientId Your google clientID string
- * @param {Array.<string[]>} scopes The scopes to request, as a space-delimited string. Optional if fetch_basic_profile is not set to false.
+ * @param {Array.<string[]>} scopes The scopes to request, as a space-delimited string. Optional if fetch_basic_profile is not set to false. Check possible scopes on google docs: https://developers.google.com/identity/protocols/oauth2/scopes
  */
 const loadAuth2 = async function (gapiScript, clientId, scopes) {
   return new Promise(resolve => {
@@ -18,24 +18,35 @@ const loadAuth2 = async function (gapiScript, clientId, scopes) {
   });
 }
 
-const loadAuth2WithProps = async function (props) {
+/**
+ * Function to init gapi auth2 with props
+ * @param {Object} gapiScript gapi script object
+ * @param {*} props Possible props to init gapi auth2, check the options on google docs: https://developers.google.com/identity/sign-in/web/reference#gapiauth2clientconfig
+ */
+const loadAuth2WithProps = async function (gapiScript, props) {
   return new Promise(resolve => {
-    gapi.load('auth2', () => {
-      resolve(gapi.auth2.init(props));
+    gapiScript.load('auth2', () => {
+      resolve(gapiScript.auth2.init(props));
     });
   });
 }
 
-const loadClientAuth2 = async function (clientId, scopes) {
+/**
+ *
+ * @param {Object} gapiScript gapi script object
+ * @param {string} clientId Your google clientID string
+ * @param {Array.<string[]>} scopes The scopes to request, as a space-delimited string. Optional if fetch_basic_profile is not set to false. Check possible scopes on google docs: https://developers.google.com/identity/protocols/oauth2/scopes
+ */
+const loadClientAuth2 = async function (gapiScript, clientId, scopes) {
   return new Promise(resolve => {
-      gapi.load('client', () => {
-          resolve(gapi.client.init({
+      gapiScript.load('client', () => {
+          resolve(gapiScript.client.init({
               client_id: clientId,
               scope: scopes
           }));
       });
-      gapi.load('auth2', () => {
-          resolve(gapi.client.init({
+      gapiScript.load('auth2', () => {
+          resolve(gapiScript.client.init({
               client_id: clientId,
               scope: scopes
           }));
@@ -49,18 +60,20 @@ const loadClientAuth2 = async function (clientId, scopes) {
  * let gapi = loadGapiInsideDOM();
  * Now you can use it anywhere.
  */
-const loadGapiInsideDOM = new Promise(resolve => {
-  const element = document.getElementsByTagName('script')[0];
-  const js = document.createElement('script');
-  js.id = 'google-platform';
-  js.src = '//apis.google.com/js/platform.js';
-  js.async = true;
-  js.defer = true;
-  element.parentNode.insertBefore(js, element);
-  js.onload = async () => {
-    resolve(window.gapi);
-  }
-});
+const loadGapiInsideDOM = async function () {
+  return new Promise(resolve => {
+    const element = document.getElementsByTagName('script')[0];
+    const js = document.createElement('script');
+    js.id = 'google-platform';
+    js.src = '//apis.google.com/js/platform.js';
+    js.async = true;
+    js.defer = true;
+    element.parentNode.insertBefore(js, element);
+    js.onload = async () => {
+      resolve(window.gapi);
+    }
+  });
+}
 
 export {
   gapi,
