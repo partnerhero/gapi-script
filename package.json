@@ -18,11 +18,15 @@
     "google-auth2",
     "gapi-auth",
     "google-sign-in"
-],
+  ],
   "author": "Lucas Andrade Oliveira",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/partnerhero/gapi-script/issues"
   },
-  "homepage": "https://github.com/partnerhero/gapi-script#readme"
+  "homepage": "https://github.com/partnerhero/gapi-script#readme",
+  "types": "./index.d.ts",
+  "devDependencies": {
+    "@types/gapi.auth2": "^0.0.53"
+  }
 }
