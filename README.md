@@ -1,5 +1,5 @@
 # gapi-script
-[![Generic badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://shields.io/) | [![Generic badge](https://img.shields.io/badge/version-1.1.0-red.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://shields.io/) | [![Generic badge](https://img.shields.io/badge/version-1.2.0-white.svg)](https://shields.io/)
 ## 💡 Intro
 npm package that loads gapi script and initialize some functions.
 
