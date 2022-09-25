@@ -1,4 +1,4 @@
-import { gapi, gapiComplete } from './gapiScript';
+const { gapi, gapiComplete } = require('./gapiScript');
 
 /**
  * Function to load gapi auth2 from a gapi that you provied
@@ -75,7 +75,7 @@ const loadGapiInsideDOM = async function () {
   });
 }
 
-export {
+module.exports {
   gapi,
   gapiComplete,
   loadAuth2,
