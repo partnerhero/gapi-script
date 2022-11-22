@@ -3,7 +3,7 @@
 ## 💡 Intro
 npm package that loads gapi script and initialize some functions.
 
- - [React live example](https://master.d3dnqnm15vsi52.amplifyapp.com))
+ - [React live example](https://master.d3dnqnm15vsi52.amplifyapp.com)
  - [React live example project](https://github.com/LucasAndrad/gapi-script-live-example)
 
 Since there is no official package and not even an updated package to load the gapi functions for us, this package make this possible. You can either call `loadGapiInsideDOM` to load the gapi-script inside a `<script>` tag on your browser. Or use the static gapi value that was copied from [google api platform](https://apis.google.com/js/platform.js), pasted to this project and exported as `gapi`.
