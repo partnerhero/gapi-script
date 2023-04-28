@@ -17,6 +17,11 @@ export const loadClientAuth2: (
   scopes: string
 ) => Promise<gapi.auth2.GoogleAuth>;
 
+export const loadClientWithProps: (
+  gapiScript: typeof gapi,
+  props: any,
+) => Promise<gapi>;
+
 export const loadGapiInsideDOM: () => Promise<typeof gapi>;
 
 export const gapiComplete: any;
